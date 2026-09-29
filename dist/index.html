@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08111F" />
+    <meta name="description" content="MySQL Questions Bank interactive practice quiz by Eng M_saeed." />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo-CgkLJMKN.svg" />
+    <title>MySQL Questions Bank | Eng M_saeed</title>
+    <script type="module" crossorigin src="/assets/index-D5fw3z46.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CtrU12ej.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%20role='img'%20aria-label='MySQL%20Quiz%20logo'%3e%3crect%20width='96'%20height='96'%20rx='18'%20fill='%2308111F'/%3e%3cellipse%20cx='48'%20cy='27'%20rx='25'%20ry='11'%20fill='%234DE1D0'/%3e%3cpath%20d='M23%2027v22c0%206%2011%2011%2025%2011s25-5%2025-11V27'%20fill='%2317324B'%20stroke='%234DE1D0'%20stroke-width='4'/%3e%3cpath%20d='M23%2038c0%206%2011%2011%2025%2011s25-5%2025-11'%20fill='none'%20stroke='%234DE1D0'%20stroke-width='4'/%3e%3cpath%20d='M37%2070l7%207%2015-17'%20fill='none'%20stroke='%23FFB84A'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="MySQL Quiz" class="brand-mark" />
+          <div>
+            <p class="eyebrow">SQL BANK / PRACTICE MODE</p>
+            <h1>MySQL Questions Bank</h1>
+          </div>
+        </div>
+        <div class="header-meta"><span id="headerStatus">Ready when you are</span></div>
+      </header>
+
+      <main>
+        <section id="startScreen" class="screen start-screen" aria-labelledby="startTitle">
+          <div class="hero-copy">
+            <p class="kicker">Databases Applications · MySQL</p>
+            <h2 id="startTitle">Test what you know.<br /><span>Build exam confidence.</span></h2>
+            <p class="lead">Practice the original English questions from the MySQL question bank. Answers stay hidden until you submit the test.</p>
+            <div class="stat-row">
+              <div><strong id="questionCount">0</strong><span>questions</span></div>
+              <div><strong>60</strong><span>points</span></div>
+              <div><strong>3</strong><span>question types</span></div>
+            </div>
+          </div>
+          <form id="startForm" class="start-card">
+            <div class="card-label">STUDENT CHECK-IN</div>
+            <label for="studentName">Enter your name</label>
+            <input id="studentName" name="studentName" type="text" autocomplete="name" placeholder="e.g. Ahmed Ali" maxlength="80" required />
+            <p class="helper">Your name appears on the results screen only.</p>
+            <button class="primary-button" type="submit">Start the quiz <span aria-hidden="true">→</span></button>
+            <p class="tiny-note">You can finish at any time. Unanswered questions count as 0.</p>
+          </form>
+        </section>
+
+        <section id="quizScreen" class="screen quiz-screen hidden" aria-labelledby="quizTitle">
+          <div class="quiz-topline">
+            <div>
+              <p class="eyebrow" id="quizChapter">CH1 · FOUNDATIONS</p>
+              <h2 id="quizTitle">Question</h2>
+            </div>
+            <div class="progress-copy"><span id="answeredCount">0</span> / <span id="totalCount">0</span> answered</div>
+          </div>
+          <div class="progress-track" aria-label="Quiz progress"><div id="progressBar" class="progress-fill"></div></div>
+
+          <div class="quiz-layout">
+            <article class="question-card" aria-live="polite">
+              <div class="question-meta"><span id="questionNumber">Question 1</span><span id="questionType" class="type-pill">TRUE / FALSE</span></div>
+              <p id="questionText" class="question-text"></p>
+              <div id="answerArea" class="answer-area"></div>
+              <div class="question-actions">
+                <button id="previousButton" class="secondary-button" type="button">← Previous</button>
+                <button id="nextButton" class="primary-button" type="button">Next →</button>
+              </div>
+            </article>
+
+            <aside class="navigator-card" aria-label="Question navigation">
+              <div class="navigator-head"><div><strong>Jump to question</strong><span>Type a number or select a dot</span></div><button id="finishButton" class="finish-button" type="button">Finish test</button></div>
+              <div class="jump-row"><input id="jumpInput" type="number" min="1" placeholder="No." aria-label="Question number" /><button id="jumpButton" class="icon-button" type="button">Go</button></div>
+              <div id="questionNavigator" class="question-navigator"></div>
+              <div class="legend"><span><i class="dot current"></i> Current</span><span><i class="dot answered"></i> Answered</span><span><i class="dot"></i> Open</span></div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="resultScreen" class="screen result-screen hidden" aria-labelledby="resultTitle">
+          <div class="result-hero">
+            <p class="kicker">Attempt complete</p>
+            <h2 id="resultTitle">Your result is ready.</h2>
+            <p id="resultMessage" class="lead"></p>
+          </div>
+          <div class="result-grid">
+            <div class="score-card"><span class="score-label">FINAL SCORE</span><strong><span id="scoreValue">0</span><small> / 60</small></strong><span id="passBadge" class="pass-badge"></span></div>
+            <div class="result-stat"><span>Correct</span><strong id="correctValue">0</strong><small>answers</small></div>
+            <div class="result-stat"><span>Incorrect</span><strong id="incorrectValue">0</strong><small>answers</small></div>
+            <div class="result-stat"><span>Unanswered</span><strong id="unansweredValue">0</strong><small>questions</small></div>
+          </div>
+          <div class="result-actions"><button id="reviewButton" class="secondary-button" type="button">Review answers</button><button id="newAttemptButton" class="primary-button" type="button">Start a new attempt →</button></div>
+          <p class="result-note">Score formula: correct answers ÷ total questions × 60. Passing mark: 36 / 60.</p>
+          <section id="reviewPanel" class="review-panel" aria-labelledby="reviewTitle">
+            <div class="review-heading"><div><p class="eyebrow">CORRECTION REVIEW</p><h3 id="reviewTitle">Questions to review</h3><p id="reviewSummary" class="review-summary"></p></div><span class="review-lock">Shown after submission</span></div>
+            <div id="reviewList" class="review-list"></div>
+          </section>
+        </section>
+      </main>
+      <footer class="site-footer"><span>Databases Applications · MySQL</span><strong>Eng M_saeed</strong></footer>
+    </div>
+  </body>
+</html>
